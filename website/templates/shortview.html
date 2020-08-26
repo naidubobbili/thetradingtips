@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<center>
+
+
+
+
+      <div class="row">
+
+
+
+  {%for topics in topics%}
+
+<div class="col-md-3">
+<div class="thumbnail">
+
+
+
+
+
+<a href="{% url 'detail' topics.id%}">
+   <img class='card' src="{{topics.Pic}} " height=200 width=200 alt="">
+</a>
+
+
+<div class="caption">
+
+
+    <a href="{% url 'detail' topics.id%}">
+      <h4 class='text' style='color:white; text-shadow: 1px 1px 1px blue;'>{{topics.Title|upper}}</h4>
+      </a>
+</div>
+</div>
+<br>
+</div>
+<br>
+
+
+  {% endfor %}
+
+</div>
+
+  </center>
+{% endblock %}
